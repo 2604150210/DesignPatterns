@@ -17,6 +17,12 @@ public class InputTextSubject extends Observable {
         text.setWrapStyleWord(true);
         (text.getDocument()).addDocumentListener(new DocumentListener() {
             @Override
+            public void changedUpdate(DocumentEvent e) {
+                content = text.getText();
+                setChanged();
+                notifyObservers(content);
+            }
+            @Override
             public void insertUpdate(DocumentEvent e) {
                 changedUpdate(e);
             }
@@ -26,12 +32,7 @@ public class InputTextSubject extends Observable {
                 changedUpdate(e);
             }
 
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                content = text.getText();
-                setChanged();
-                notifyObservers(content);
-            }
+
         });
     }
 

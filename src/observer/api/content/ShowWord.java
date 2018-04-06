@@ -21,6 +21,7 @@ public class ShowWord extends JPanel implements Observer {
         text.setWrapStyleWord(true);
         text.setEditable(false);
         add(new JScrollPane(text));
+        wordlist = new TreeSet<>();
     }
     @Override
     public void update(Observable o, Object arg) {
