@@ -19,4 +19,5 @@ public class TV implements TwoElectricOutlet{
     private void turnOn() {
         System.out.println(name + "开始播报节目。");
     }
+
 }

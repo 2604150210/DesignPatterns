@@ -5,12 +5,15 @@ package adapter;
  */
 public class Application {
     public static void main(String[] args) {
-        ThreeElectricOutlet threeElectricOutlet = new Wash();
+        ThreeElectricOutlet wash = new Wash();
         System.out.println("使用三相插座接通电流.");
-        threeElectricOutlet.connectElectricCurent();
+        wash.connectElectricCurent();
         TV tv = new TV();
         ThreeElectricAdapter threeElectricAdapter = new ThreeElectricAdapter(tv);
         System.out.println("使用二相插座接通电源.");
         threeElectricAdapter.connectElectricCurent();
+
+        ThreeAndTwoElectricAdapter threeAndTwoElectricAdapter = new ThreeAndTwoElectricAdapter(tv,wash);
+        threeAndTwoElectricAdapter.connectElectricCurent();
     }
 }
