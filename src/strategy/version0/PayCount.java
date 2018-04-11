@@ -1,4 +1,4 @@
-package strategyPattern.version0;
+package strategy.version0;
 
 import javax.swing.*;
 import java.awt.*;
