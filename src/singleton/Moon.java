@@ -4,7 +4,7 @@ package singleton;
  * Created by jal on 2018/4/9 0009.
  */
 public class Moon {
-    private static Moon uniqueMoon;
+    private static Moon uniqueMoon=null;
     double radius;
     double distanceToEarth;
     private Moon(){
@@ -13,7 +13,7 @@ public class Moon {
         distanceToEarth = 363300;
     }
     public static synchronized Moon getMoon(){
-        if (uniqueMoon != null){
+        if (uniqueMoon== null){
             uniqueMoon = new Moon();
         }
         return uniqueMoon;
